@@ -5,6 +5,7 @@ import { getAdverts } from 'redux/selectors';
 import css from './AdvertsList.module.css';
 import { ReactComponent as HeartIcon } from '../../image/heart.svg';
 import { Modal } from 'components/Modal';
+import { Sidebar } from 'components/SideBar';
 
 export const AdvertsList = () => {
   const { items, isLoading, error } = useSelector(getAdverts);
@@ -23,6 +24,7 @@ export const AdvertsList = () => {
 
   return (
     <>
+      <Sidebar />
       <div className={css.container}>
         <ul className={css.list}>
           {isLoading && <b>Loading contacts...</b>}

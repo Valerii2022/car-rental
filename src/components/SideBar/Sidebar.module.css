@@ -1,0 +1,27 @@
+.container {
+  padding-top: 150px;
+  width: 859px;
+  margin: 0 auto;
+}
+
+.selectField {
+  width: 224px;
+}
+
+.searchBtn {
+  width: 136px;
+  height: 48px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  background-color: #3470ff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 250ms linear;
+}
+
+.searchBtn:hover {
+  background-color: #0b44cd;
+}

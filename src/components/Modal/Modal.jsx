@@ -21,7 +21,6 @@ export const Modal = ({ currentId, modalIsOpen }) => {
     functionalities,
     type,
     mileage,
-    rentalCompany,
     rentalConditions,
     accessories,
     fuelConsumption,
@@ -58,13 +57,7 @@ export const Modal = ({ currentId, modalIsOpen }) => {
           height="24"
           onClick={handleBackdropClick}
         />
-        <img
-          className={css.image}
-          src={img}
-          alt=""
-          width="461"
-          //   height="248"
-        />
+        <img className={css.image} src={img} alt="" width="461" />
         <h2 className={css.title}>
           {make}
           <span className={css.accent}> {model}, </span>
