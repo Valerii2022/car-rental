@@ -17,6 +17,13 @@
   width: 274px;
 }
 
+.heartIcon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  fill: transparent;
+}
+
 .imageWrapper {
   border-radius: 14px;
   overflow: hidden;
@@ -24,27 +31,35 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 14px;
+  position: relative;
 }
 
 .titleWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 8px;
+}
+
+.title {
   color: #121417;
   font-size: 16px;
+  font-style: normal;
   font-weight: 500;
   line-height: 1.5;
-  margin-bottom: 8px;
 }
 
 .accent {
   color: #3470ff;
 }
 
+.optionsListWrap {
+  margin-bottom: 28px;
+}
+
 .optionsList {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 28px;
 }
 
 .optionsItem {
@@ -77,4 +92,10 @@
   line-height: 1.43;
   background-color: #3470ff;
   border: none;
+  cursor: pointer;
+  transition: background-color 250ms linear;
+}
+
+.learnMoreBtn:hover {
+  background-color: #0b44cd;
 }
