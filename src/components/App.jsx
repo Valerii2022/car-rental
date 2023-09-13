@@ -1,3 +1,5 @@
+import { AdvertsList } from './AdvertsList';
+
 export const App = () => {
-  return <p>React homework template</p>;
+  return <AdvertsList />;
 };
