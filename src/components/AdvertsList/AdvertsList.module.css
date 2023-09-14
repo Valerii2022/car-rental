@@ -13,8 +13,10 @@
   margin-bottom: 100px;
 }
 
-.itemList {
+.listItem {
   width: 274px;
+  display: flex;
+  flex-direction: column;
 }
 
 .heartIcon {
@@ -22,6 +24,7 @@
   top: 14px;
   right: 14px;
   fill: transparent;
+  cursor: pointer;
 }
 
 .imageWrapper {
@@ -44,7 +47,6 @@
 .title {
   color: #121417;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: 1.5;
 }
@@ -55,6 +57,7 @@
 
 .optionsListWrap {
   margin-bottom: 28px;
+  flex-grow: 1;
 }
 
 .optionsList {

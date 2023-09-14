@@ -4,8 +4,57 @@
   margin: 0 auto;
 }
 
-.selectField {
+.form {
+  display: flex;
+  gap: 18px;
+  align-items: flex-end;
+}
+
+.selectBrandField {
   width: 224px;
+}
+
+.selectPriceField {
+  width: 125px;
+}
+
+.selectTitle {
+  margin-bottom: 8px;
+  color: #8a8a89;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+}
+
+.inputWrap {
+  display: flex;
+}
+
+.inputFrom {
+  border-radius: 14px 0px 0px 14px;
+  background: #f7f7fb;
+  border: none;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
+  padding: 14px 24px;
+  width: 160px;
+  color: #121417;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+  outline: none;
+}
+
+.inputTo {
+  border-radius: 0px 14px 14px 0px;
+  background: #f7f7fb;
+  border: none;
+  padding: 14px 24px;
+  width: 160px;
+  color: #121417;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+  outline: none;
 }
 
 .searchBtn {

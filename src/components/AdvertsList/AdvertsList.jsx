@@ -1,35 +1,44 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchAdverts } from 'redux/operations';
-import { getAdverts } from 'redux/selectors';
+import { getFavourites } from 'redux/selectors';
 import css from './AdvertsList.module.css';
 import { ReactComponent as HeartIcon } from '../../image/heart.svg';
+import { ReactComponent as ActiveIcon } from '../../image/active.svg';
 import { Modal } from 'components/Modal';
-import { Sidebar } from 'components/SideBar';
+import { addFavourites, deleteFavourites } from 'redux/favouritesSlise';
 
-export const AdvertsList = () => {
-  const { items, isLoading, error } = useSelector(getAdverts);
+export const AdvertsList = ({ adverts, setPage }) => {
+  // const { items, isLoading, error } = useSelector(getAdverts);
+  const favourites = useSelector(getFavourites);
   const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
   const [id, setId] = useState(null);
 
-  useEffect(() => {
-    dispatch(fetchAdverts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchAdverts());
+  // }, [dispatch]);
 
   const handleBtnClick = e => {
     setId(e.target.id);
     setOpenModal(true);
   };
 
+  const handleHeartClick = e => {
+    const id = 9582;
+    if (favourites.includes(id)) {
+      dispatch(deleteFavourites(id));
+    } else {
+      dispatch(addFavourites(id));
+    }
+  };
+
   return (
     <>
-      <Sidebar />
       <div className={css.container}>
         <ul className={css.list}>
-          {isLoading && <b>Loading contacts...</b>}
-          {error && <b>{error}</b>}
-          {items.map(
+          {/* {isLoading && <b>Loading contacts...</b>} */}
+          {/* {error && <b>{error}</b>} */}
+          {adverts.map(
             ({
               year,
               id,
@@ -44,13 +53,23 @@ export const AdvertsList = () => {
               address,
             }) => {
               return (
-                <li className={css.itemList} key={id}>
+                <li className={css.listItem} key={id}>
                   <div className={css.imageWrapper}>
-                    <HeartIcon
-                      className={css.heartIcon}
-                      width="18"
-                      height="18"
-                    />
+                    {favourites.includes(id) ? (
+                      <ActiveIcon
+                        onClick={handleHeartClick}
+                        className={css.heartIcon}
+                        width="18"
+                        height="18"
+                      />
+                    ) : (
+                      <HeartIcon
+                        onClick={handleHeartClick}
+                        className={css.heartIcon}
+                        width="18"
+                        height="18"
+                      />
+                    )}
                     <img
                       className={css.image}
                       src={img}
