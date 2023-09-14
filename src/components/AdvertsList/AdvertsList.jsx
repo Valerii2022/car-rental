@@ -7,7 +7,7 @@ import { ReactComponent as ActiveIcon } from '../../image/active.svg';
 import { Modal } from 'components/Modal';
 import { addFavourites, deleteFavourites } from 'redux/favouritesSlise';
 
-export const AdvertsList = ({ adverts, setPage }) => {
+export const AdvertsList = ({ adverts, setPage, page }) => {
   const { error, isLoading } = useSelector(getAdverts);
   const favourites = useSelector(getFavourites);
   const dispatch = useDispatch();
@@ -65,13 +65,7 @@ export const AdvertsList = ({ adverts, setPage }) => {
                         height="18"
                       />
                     )}
-                    <img
-                      className={css.image}
-                      src={img}
-                      alt=""
-                      // width="274"
-                      height="268"
-                    />
+                    <img className={css.image} src={img} alt="" height="268" />
                   </div>
                   <div className={css.titleWrapper}>
                     <h2 className={css.title}>
@@ -111,13 +105,15 @@ export const AdvertsList = ({ adverts, setPage }) => {
             }
           )}
         </ul>
-        <button
-          onClick={() => setPage(pageNumber => pageNumber + 1)}
-          type="button"
-          className={css.loadMoreBtn}
-        >
-          Load more
-        </button>
+        {page === 'catalog' && (
+          <button
+            onClick={() => setPage(pageNumber => pageNumber + 1)}
+            type="button"
+            className={css.loadMoreBtn}
+          >
+            Load more
+          </button>
+        )}
       </div>
       {openModal && <Modal currentId={id} modalIsOpen={setOpenModal} />}
     </>

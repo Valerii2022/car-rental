@@ -10,11 +10,22 @@
   align-items: flex-end;
 }
 
-.selectBrandField {
+.selectField {
+  padding: 0 14px 0 18px;
+  color: #121417;
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+  height: 48px;
+  border-radius: 14px;
+  background: #f7f7fb;
   width: 224px;
+  outline: none;
+  border: none;
 }
 
-.selectPriceField {
+.selectPrice {
   width: 125px;
 }
 
@@ -30,12 +41,26 @@
   display: flex;
 }
 
+.inputLabel {
+  position: relative;
+}
+
+.inputTitle {
+  position: absolute;
+  top: 13px;
+  left: 24px;
+  color: #121417;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
+}
+
 .inputFrom {
   border-radius: 14px 0px 0px 14px;
   background: #f7f7fb;
   border: none;
   border-right: 1px solid rgba(138, 138, 137, 0.2);
-  padding: 14px 24px;
+  padding: 14px 14px 14px 75px;
   width: 160px;
   color: #121417;
   font-size: 18px;
@@ -48,7 +73,7 @@
   border-radius: 0px 14px 14px 0px;
   background: #f7f7fb;
   border: none;
-  padding: 14px 24px;
+  padding: 14px 14px 14px 53px;
   width: 160px;
   color: #121417;
   font-size: 18px;
