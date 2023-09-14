@@ -116,7 +116,11 @@ export const AdvertsList = ({ adverts, setPage }) => {
             }
           )}
         </ul>
-        <button type="button" className={css.loadMoreBtn}>
+        <button
+          onClick={() => setPage(pageNumber => pageNumber + 1)}
+          type="button"
+          className={css.loadMoreBtn}
+        >
           Load more
         </button>
       </div>
