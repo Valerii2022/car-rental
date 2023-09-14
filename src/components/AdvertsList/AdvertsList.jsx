@@ -97,6 +97,9 @@ export const AdvertsList = () => {
             }
           )}
         </ul>
+        <button type="button" className={css.loadMoreBtn}>
+          Load more
+        </button>
       </div>
       {openModal && <Modal currentId={id} modalIsOpen={setOpenModal} />}
     </>

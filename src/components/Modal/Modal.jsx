@@ -5,6 +5,7 @@ import { ReactComponent as ClosetIcon } from '../../image/close.svg';
 import { useSelector } from 'react-redux';
 import { getAdverts } from 'redux/selectors';
 import { nanoid } from 'nanoid';
+import { Link } from 'react-router-dom';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -116,9 +117,9 @@ export const Modal = ({ currentId, modalIsOpen }) => {
             Price: <span className={css.accentConditions}>{rentalPrice}</span>
           </li>
         </ul>
-        <button id={id} className={css.rentalBtn} type="button">
+        <Link to="tel:+380730000000" id={id} className={css.rentalBtn}>
           Rental car
-        </button>
+        </Link>
       </div>
     </div>,
     modalRoot

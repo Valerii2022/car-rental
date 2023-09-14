@@ -99,3 +99,21 @@
 .learnMoreBtn:hover {
   background-color: #0b44cd;
 }
+
+.loadMoreBtn {
+  display: block;
+  margin: 0 auto 150px auto;
+  color: #3470ff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration-line: underline;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 250ms linear;
+}
+
+.loadMoreBtn:hover {
+  color: #0b44cd;
+}
