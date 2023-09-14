@@ -17,7 +17,7 @@ export const Catalog = () => {
   return (
     <>
       <Sidebar />
-      <AdvertsList adverts={items} setPage={setPageNumber} />
+      <AdvertsList adverts={items} setPage={setPageNumber} page="catalog" />
     </>
   );
 };
