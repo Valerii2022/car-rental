@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getFavourites } from 'redux/selectors';
+import { getAdverts, getFavourites } from 'redux/selectors';
 import css from './AdvertsList.module.css';
 import { ReactComponent as HeartIcon } from '../../image/heart.svg';
 import { ReactComponent as ActiveIcon } from '../../image/active.svg';
@@ -8,27 +8,22 @@ import { Modal } from 'components/Modal';
 import { addFavourites, deleteFavourites } from 'redux/favouritesSlise';
 
 export const AdvertsList = ({ adverts, setPage }) => {
-  // const { items, isLoading, error } = useSelector(getAdverts);
+  const { error, isLoading } = useSelector(getAdverts);
   const favourites = useSelector(getFavourites);
   const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
   const [id, setId] = useState(null);
-
-  // useEffect(() => {
-  //   dispatch(fetchAdverts());
-  // }, [dispatch]);
 
   const handleBtnClick = e => {
     setId(e.target.id);
     setOpenModal(true);
   };
 
-  const handleHeartClick = e => {
-    const id = 9582;
-    if (favourites.includes(id)) {
-      dispatch(deleteFavourites(id));
+  const handleHeartClick = currentId => {
+    if (favourites.includes(currentId)) {
+      dispatch(deleteFavourites(currentId));
     } else {
-      dispatch(addFavourites(id));
+      dispatch(addFavourites(currentId));
     }
   };
 
@@ -36,8 +31,8 @@ export const AdvertsList = ({ adverts, setPage }) => {
     <>
       <div className={css.container}>
         <ul className={css.list}>
-          {/* {isLoading && <b>Loading contacts...</b>} */}
-          {/* {error && <b>{error}</b>} */}
+          {isLoading && <b>Loading contacts...</b>}
+          {error && <b>{error}</b>}
           {adverts.map(
             ({
               year,
@@ -57,14 +52,14 @@ export const AdvertsList = ({ adverts, setPage }) => {
                   <div className={css.imageWrapper}>
                     {favourites.includes(id) ? (
                       <ActiveIcon
-                        onClick={handleHeartClick}
+                        onClick={() => handleHeartClick(id)}
                         className={css.heartIcon}
                         width="18"
                         height="18"
                       />
                     ) : (
                       <HeartIcon
-                        onClick={handleHeartClick}
+                        onClick={() => handleHeartClick(id)}
                         className={css.heartIcon}
                         width="18"
                         height="18"
