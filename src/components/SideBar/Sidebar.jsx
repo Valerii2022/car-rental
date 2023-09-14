@@ -6,13 +6,12 @@ import { addFilters } from 'redux/favouritesSlise';
 
 export const Sidebar = () => {
   const dispatch = useDispatch();
-  const [minMileage, setMinMileage] = useState(0);
-  const [maxMileage, setMaxMileage] = useState(1000000);
+  const [minMileage, setMinMileage] = useState('');
+  const [maxMileage, setMaxMileage] = useState('');
   let filters = {};
 
   const handleSubmitForm = e => {
     e.preventDefault();
-    console.log(e.target[0].value);
     filters.brand = e.target[0].value;
     filters.price = Number(e.target[1].value);
     filters.min = minMileage;
