@@ -8,7 +8,7 @@ import { Modal } from 'components/Modal';
 import { addFavourites, deleteFavourites } from 'redux/favouritesSlise';
 
 export const AdvertsList = ({ adverts, setPage, page }) => {
-  const { error, isLoading } = useSelector(getAdverts);
+  const { error, isLoading, loadMore } = useSelector(getAdverts);
   const favourites = useSelector(getFavourites);
   const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
@@ -105,7 +105,7 @@ export const AdvertsList = ({ adverts, setPage, page }) => {
             }
           )}
         </ul>
-        {page === 'catalog' && (
+        {page === 'catalog' && loadMore && (
           <button
             onClick={() => setPage(pageNumber => pageNumber + 1)}
             type="button"
