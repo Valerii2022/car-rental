@@ -1,17 +1,40 @@
 {
   "files": {
-    "main.css": "/car-rental/static/css/main.f27730ac.css",
-    "main.js": "/car-rental/static/js/main.730644f6.js",
-    "static/media/rental.svg": "/car-rental/static/media/rental.f1a62fc244f04cc4edbefb8c88a94e46.svg",
+    "main.css": "/car-rental/static/css/main.0f192a8a.css",
+    "main.js": "/car-rental/static/js/main.d328b9fd.js",
+    "static/media/gmc.jpg": "/car-rental/static/media/gmc.8c14d6711bbf3bca0bda.jpg",
+    "static/media/toyota.jpg": "/car-rental/static/media/toyota.785afe843661d1da608e.jpg",
+    "static/media/bmw.jpg": "/car-rental/static/media/bmw.8f11c1963b1ce51c47f3.jpg",
+    "static/media/background.jpg": "/car-rental/static/media/background.76cf6d372f66b1b8fc7e.jpg",
+    "static/media/chrysler.jpg": "/car-rental/static/media/chrysler.ec5e175d5ffbae9046c6.jpg",
+    "static/media/mers.jpg": "/car-rental/static/media/mers.51e5398f6aa57f6eed1f.jpg",
+    "static/media/buick.jpg": "/car-rental/static/media/buick.2e5854fc94e34594326c.jpg",
+    "static/media/mini.jpg": "/car-rental/static/media/mini.b53870f12d0f4cee86c4.jpg",
+    "static/media/bentley.jpg": "/car-rental/static/media/bentley.498f974c2a37f34e1d45.jpg",
+    "static/media/lamborghini.jpg": "/car-rental/static/media/lamborghini.e6488c56a9ac6045c6ef.jpg",
+    "static/media/lincoln.jpg": "/car-rental/static/media/lincoln.ee6c720fde8b83bc776e.jpg",
+    "static/media/nissan.jpg": "/car-rental/static/media/nissan.9e71793295cfc74a9816.jpg",
+    "static/media/mitsubishi.jpg": "/car-rental/static/media/mitsubishi.c423cb007ba08b037d00.jpg",
+    "static/media/kia.jpg": "/car-rental/static/media/kia.29a574e1ec63d303c6d5.jpg",
+    "static/media/pontiac.jpg": "/car-rental/static/media/pontiac.c96ef5548bfef7d30d91.jpg",
+    "static/media/acura.jpg": "/car-rental/static/media/acura.c548f917f9263af09942.jpg",
+    "static/media/audi.jpg": "/car-rental/static/media/audi.01add114792f4c83d679.jpg",
+    "static/media/aston.jpg": "/car-rental/static/media/aston.01d0d6a2affdbe568d91.jpg",
+    "static/media/hummer.jpg": "/car-rental/static/media/hummer.85aef4f9764090c17414.jpg",
+    "static/media/volvo.jpg": "/car-rental/static/media/volvo.30261647aa8de742b05a.jpg",
+    "static/media/hyunday.jpg": "/car-rental/static/media/hyunday.6d34d33b05c54d06f6f5.jpg",
+    "static/media/subaru.jpg": "/car-rental/static/media/subaru.abe25d9210776cae9272.jpg",
+    "static/media/land.jpg": "/car-rental/static/media/land.2725352c65d108c591ea.jpg",
+    "static/media/rental.svg": "/car-rental/static/media/rental.5317755329a798675bb0ba633a7585da.svg",
     "index.html": "/car-rental/index.html",
     "static/media/heart.svg": "/car-rental/static/media/heart.299adea5481cb3820f56ee581d418615.svg",
     "static/media/active.svg": "/car-rental/static/media/active.97847e9195943f61800c97807e735d4f.svg",
     "static/media/close.svg": "/car-rental/static/media/close.3237ce61367214f25038c00d9d0fc97e.svg",
-    "main.f27730ac.css.map": "/car-rental/static/css/main.f27730ac.css.map",
-    "main.730644f6.js.map": "/car-rental/static/js/main.730644f6.js.map"
+    "main.0f192a8a.css.map": "/car-rental/static/css/main.0f192a8a.css.map",
+    "main.d328b9fd.js.map": "/car-rental/static/js/main.d328b9fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.f27730ac.css",
-    "static/js/main.730644f6.js"
+    "static/css/main.0f192a8a.css",
+    "static/js/main.d328b9fd.js"
   ]
 }
