@@ -92,6 +92,9 @@ export const Sidebar = () => {
             <option value="Chrysler">Chrysler</option>
             <option value="Kia">Kia</option>
             <option value="Land">Land</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Lexus">Lexus</option>
+            <option value="Acura">Acura</option>
           </select>
           {/* <Select
             className={css.selectBrandField}
