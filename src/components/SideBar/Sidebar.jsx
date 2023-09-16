@@ -1,11 +1,11 @@
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import css from './Sidebar.module.css';
 import React, { useState } from 'react';
-import { addFilters } from 'redux/favouritesSlise';
+// import { addFilters } from 'redux/favouritesSlise';
 import Select from 'react-select';
 
 export const Sidebar = () => {
-  const dispatch = useDispatch();
+  //   const dispatch = useDispatch();
   const [minMileage, setMinMileage] = useState('');
   const [maxMileage, setMaxMileage] = useState('');
   let filters = {};
