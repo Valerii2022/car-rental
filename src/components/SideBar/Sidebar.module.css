@@ -10,22 +10,11 @@
   align-items: flex-end;
 }
 
-.selectField {
-  padding: 0 14px 0 18px;
-  color: #121417;
-  font-family: Manrope;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.11;
-  height: 48px;
-  border-radius: 14px;
-  background: #f7f7fb;
+.selectBrandField {
   width: 224px;
-  outline: none;
-  border: none;
 }
 
-.selectPrice {
+.selectPriceField {
   width: 125px;
 }
 
