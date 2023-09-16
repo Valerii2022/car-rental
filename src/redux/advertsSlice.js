@@ -9,13 +9,17 @@ const advertsSlice = createSlice({
       .addCase(fetchAdverts.pending, state => {
         state.isLoading = true;
       })
-      .addCase(fetchAdverts.fulfilled, (state, { payload }) => {
+      .addCase(fetchAdverts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        if (payload.length < 8) {
+        if (action.payload.length < 8) {
           state.loadMore = false;
         }
-        state.items.push(...payload)
+        if (action.meta.arg === 1) {
+          state.items = action.payload;
+        } else {
+          state.items.push(...action.payload);
+        }
       })
       .addCase(fetchAdverts.rejected, (state, { payload }) => {
         state.isLoading = false;
