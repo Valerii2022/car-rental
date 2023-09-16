@@ -15,7 +15,7 @@ const advertsSlice = createSlice({
         if (payload.length < 8) {
           state.loadMore = false;
         }
-        state.items = payload;
+        state.items.push(...payload)
       })
       .addCase(fetchAdverts.rejected, (state, { payload }) => {
         state.isLoading = false;

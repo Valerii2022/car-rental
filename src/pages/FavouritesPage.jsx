@@ -12,7 +12,7 @@ export const Favourites = () => {
   const favouritesList = items.filter(item => favourites.includes(item.id));
 
   useEffect(() => {
-    dispatch(fetchAdverts());
+    dispatch(fetchAdverts())
   }, [dispatch]);
   return (
     <>
