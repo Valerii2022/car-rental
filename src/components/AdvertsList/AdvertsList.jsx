@@ -14,11 +14,6 @@ export const AdvertsList = ({ adverts, setPage, page }) => {
   const [openModal, setOpenModal] = useState(false);
   const [id, setId] = useState(null);
 
-  const uniqueId = [...new Set(adverts.map(item => item.id))];
-
-  //   const currentAdverts = adverts.filter(item => uniqueId.includes(item.id));
-  //   console.log(currentAdverts);
-
   const handleBtnClick = e => {
     setId(e.target.id);
     setOpenModal(true);

@@ -116,7 +116,16 @@ export const Modal = ({ currentId, modalIsOpen }) => {
           {rentalConditions.split('\n').map(item => {
             return (
               <li key={nanoid()} className={css.conditionItem}>
-                {item}
+                {item.includes(':') ? (
+                  <>
+                    Minimum age:
+                    <span className={css.accentConditions}>
+                      {item.slice(-2)}
+                    </span>
+                  </>
+                ) : (
+                  item
+                )}
               </li>
             );
           })}

@@ -10,12 +10,26 @@
   align-items: flex-end;
 }
 
-.selectBrandField {
-  width: 224px;
+.selectPriceField::before {
+  content: 'To';
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  color: #121417;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
 }
 
-.selectPriceField {
-  min-width: 125px;
+.selectPriceField::after {
+  content: '$';
+  position: absolute;
+  top: 14px;
+  right: 49px;
+  color: #121417;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.11;
 }
 
 .selectTitle {

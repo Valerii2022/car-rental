@@ -97,8 +97,76 @@ export const Sidebar = () => {
       height: '48px',
       display: 'flex',
       padding: '0',
+      width: '224px',
       paddingLeft: '10px',
-      paddingRight: '18px',
+      paddingRight: '14px',
+      borderRight: 'none',
+      color: '#121417',
+      fontSize: '18px',
+      fontWeight: '500',
+      lineHeight: '1.11',
+    }),
+    option: (styles, { isFocused }) => {
+      return {
+        ...styles,
+        backgroundColor: 'transparent',
+        color: isFocused ? '#121417' : 'rgba(18, 20, 23, 0.20)',
+        fontSize: '16px',
+        fontWeight: '500',
+        lineHeight: '1.25',
+        cursor: 'pointer',
+        paddingLeft: '0',
+        paddingRight: '0',
+        paddingTop: '4px',
+        paddingBottom: '4px',
+      };
+    },
+    placeholder: defaultStyles => {
+      return {
+        ...defaultStyles,
+        color: '#121417',
+      };
+    },
+    dropdownIndicator: (provided, state) => ({
+      ...provided,
+      svg: {
+        fill: '#121417',
+      },
+      cursor: 'pointer',
+      transition: 'transform 250ms linear',
+      transform: state.isFocused ? 'rotate(180deg)' : null,
+    }),
+    menu: provided => ({
+      ...provided,
+      borderRadius: '10px',
+      paddingLeft: '18px',
+      paddingTop: '10px',
+      paddingBottom: '18px',
+      paddingRight: '8px',
+    }),
+    menuList: provided => ({
+      ...provided,
+      '::-webkit-scrollbar': {
+        width: '8px',
+        height: '0px',
+      },
+      '::-webkit-scrollbar-thumb': {
+        background: 'rgba(18, 20, 23, 0.05)',
+        borderRadius: '10px',
+      },
+    }),
+  };
+
+  const selectPriceStyles = {
+    control: styles => ({
+      borderRadius: '14px',
+      backgroundColor: '#f7f7fb',
+      height: '48px',
+      display: 'flex',
+      padding: '0',
+      width: '125px',
+      paddingLeft: '30px',
+      paddingRight: '14px',
       borderRight: 'none',
       color: '#121417',
       fontSize: '18px',
@@ -166,7 +234,6 @@ export const Sidebar = () => {
             defaultValue={brand}
             onChange={e => setBrand(e.label)}
             maxMenuHeight={272}
-            className={css.selectBrandField}
             placeholder="Enter the text"
             options={brandOptions}
             styles={selectStyles}
@@ -178,13 +245,13 @@ export const Sidebar = () => {
         <div>
           <p className={css.selectTitle}>Price / 1 hour</p>
           <Select
+            className={css.selectPriceField}
             defaultValue={price}
             onChange={e => setPrice(e.label)}
             maxMenuHeight={188}
-            className={css.selectPriceField}
-            placeholder="To $"
+            placeholder=""
             options={priceOptions}
-            styles={selectStyles}
+            styles={selectPriceStyles}
             components={{
               IndicatorSeparator: () => null,
             }}
