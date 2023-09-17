@@ -15,10 +15,9 @@ export const Sidebar = () => {
   const handleSubmitForm = e => {
     e.preventDefault();
     filters.brand = brand;
-    filters.price = price;
-    filters.min = minMileage;
-    filters.max = maxMileage;
-    console.log(filters);
+    filters.price = price ? price : 1000;
+    filters.min = minMileage ? minMileage : 0;
+    filters.max = maxMileage ? maxMileage : 10000;
     dispatch(addFilters(filters));
     setMaxMileage('');
     setMinMileage('');
@@ -179,7 +178,6 @@ export const Sidebar = () => {
         <div>
           <p className={css.selectTitle}>Price / 1 hour</p>
           <Select
-            required
             defaultValue={price}
             onChange={e => setPrice(e.label)}
             maxMenuHeight={188}
@@ -198,7 +196,6 @@ export const Sidebar = () => {
             <label className={css.inputLabel}>
               <p className={css.inputTitle}>From</p>
               <input
-                required
                 onChange={e => convertMileage(e.target.value, 'min')}
                 value={minMileage}
                 className={css.inputFrom}
@@ -210,7 +207,6 @@ export const Sidebar = () => {
             <label className={css.inputLabel}>
               <p className={css.inputTitle}>To</p>
               <input
-                required
                 onChange={e => convertMileage(e.target.value, 'max')}
                 value={maxMileage}
                 className={css.inputTo}
