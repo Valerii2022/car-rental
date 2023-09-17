@@ -108,6 +108,7 @@ export const Sidebar = () => {
       svg: {
         fill: '#121417',
       },
+      cursor: 'pointer',
       transition: 'transform 250ms linear',
       transform: state.isFocused ? 'rotate(180deg)' : null,
     }),
@@ -121,7 +122,14 @@ export const Sidebar = () => {
     }),
     menuList: provided => ({
       ...provided,
-      color: 'red',
+      '::-webkit-scrollbar': {
+        width: '8px',
+        height: '0px',
+      },
+      '::-webkit-scrollbar-thumb': {
+        background: 'rgba(18, 20, 23, 0.05)',
+        borderRadius: '10px',
+      },
     }),
   };
 
