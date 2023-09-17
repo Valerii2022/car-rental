@@ -22,6 +22,26 @@ export const Sidebar = () => {
     setMinMileage('');
   };
 
+  const convertMileage = (mileage, value) => {
+    if (Number(mileage) > 1000) {
+      const res = mileage.toString().split('');
+      res.splice(res.length - 3, 0, ',').join('');
+      if (value === 'max') {
+        setMaxMileage(res.join(''));
+      }
+      if (value === 'min') {
+        setMinMileage(res.join(''));
+      }
+    } else {
+      if (value === 'max') {
+        setMaxMileage(mileage);
+      }
+      if (value === 'min') {
+        setMinMileage(mileage);
+      }
+    }
+  };
+
   const brandOptions = [
     { value: 'buick', label: 'Buick' },
     { value: 'volvo', label: 'Volvo' },
@@ -168,7 +188,7 @@ export const Sidebar = () => {
             <label className={css.inputLabel}>
               <p className={css.inputTitle}>From</p>
               <input
-                onChange={e => setMinMileage(e.target.value)}
+                onChange={e => convertMileage(e.target.value, 'min')}
                 value={minMileage}
                 className={css.inputFrom}
                 type="text"
@@ -179,7 +199,7 @@ export const Sidebar = () => {
             <label className={css.inputLabel}>
               <p className={css.inputTitle}>To</p>
               <input
-                onChange={e => setMaxMileage(e.target.value)}
+                onChange={e => convertMileage(e.target.value, 'max')}
                 value={maxMileage}
                 className={css.inputTo}
                 type="text"

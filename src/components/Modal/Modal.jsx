@@ -49,6 +49,16 @@ export const Modal = ({ currentId, modalIsOpen }) => {
     }
   };
 
+  const convertMileage = mileage => {
+    if (mileage > 1000) {
+      const res = mileage.toString().split('');
+      res.splice(res.length - 3, 0, ',').join('');
+      return res;
+    } else {
+      return mileage;
+    }
+  };
+
   return createPortal(
     <div className={css.overlay} onClick={handleBackdropClick}>
       <div className={css.modal}>
@@ -111,7 +121,10 @@ export const Modal = ({ currentId, modalIsOpen }) => {
             );
           })}
           <li className={css.conditionItem}>
-            Mileage: <span className={css.accentConditions}>{mileage}</span>
+            Mileage:{' '}
+            <span className={css.accentConditions}>
+              {convertMileage(mileage)}
+            </span>
           </li>
           <li className={css.conditionItem}>
             Price: <span className={css.accentConditions}>{rentalPrice}</span>
