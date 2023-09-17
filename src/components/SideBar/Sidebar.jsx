@@ -121,14 +121,14 @@ export const Sidebar = () => {
         paddingBottom: '4px',
       };
     },
-    placeholder: defaultStyles => {
+    placeholder: styles => {
       return {
-        ...defaultStyles,
+        ...styles,
         color: '#121417',
       };
     },
-    dropdownIndicator: (provided, state) => ({
-      ...provided,
+    dropdownIndicator: (styles, state) => ({
+      ...styles,
       svg: {
         fill: '#121417',
       },
@@ -136,16 +136,16 @@ export const Sidebar = () => {
       transition: 'transform 250ms linear',
       transform: state.isFocused ? 'rotate(180deg)' : null,
     }),
-    menu: provided => ({
-      ...provided,
+    menu: styles => ({
+      ...styles,
       borderRadius: '10px',
       paddingLeft: '18px',
       paddingTop: '10px',
       paddingBottom: '18px',
       paddingRight: '8px',
     }),
-    menuList: provided => ({
-      ...provided,
+    menuList: styles => ({
+      ...styles,
       '::-webkit-scrollbar': {
         width: '8px',
         height: '0px',
@@ -173,6 +173,10 @@ export const Sidebar = () => {
       fontWeight: '500',
       lineHeight: '1.11',
     }),
+    valueContainer: styles => ({
+      ...styles,
+      minWidth: '60px',
+    }),
     option: (styles, { isFocused }) => {
       return {
         ...styles,
@@ -188,14 +192,14 @@ export const Sidebar = () => {
         paddingBottom: '4px',
       };
     },
-    placeholder: defaultStyles => {
+    placeholder: styles => {
       return {
-        ...defaultStyles,
+        ...styles,
         color: '#121417',
       };
     },
-    dropdownIndicator: (provided, state) => ({
-      ...provided,
+    dropdownIndicator: (styles, state) => ({
+      ...styles,
       svg: {
         fill: '#121417',
       },
@@ -203,16 +207,16 @@ export const Sidebar = () => {
       transition: 'transform 250ms linear',
       transform: state.isFocused ? 'rotate(180deg)' : null,
     }),
-    menu: provided => ({
-      ...provided,
+    menu: styles => ({
+      ...styles,
       borderRadius: '10px',
       paddingLeft: '18px',
       paddingTop: '10px',
       paddingBottom: '18px',
       paddingRight: '8px',
     }),
-    menuList: provided => ({
-      ...provided,
+    menuList: styles => ({
+      ...styles,
       '::-webkit-scrollbar': {
         width: '8px',
         height: '0px',
@@ -249,7 +253,7 @@ export const Sidebar = () => {
             defaultValue={price}
             onChange={e => setPrice(e.label)}
             maxMenuHeight={188}
-            placeholder=""
+            placeholder="$"
             options={priceOptions}
             styles={selectPriceStyles}
             components={{
@@ -266,6 +270,7 @@ export const Sidebar = () => {
                 onChange={e => convertMileage(e.target.value, 'min')}
                 value={minMileage}
                 className={css.inputFrom}
+                maxLength={5}
                 type="text"
                 pattern="[0-9 ,]+"
                 title="Only digits provided"
@@ -277,6 +282,7 @@ export const Sidebar = () => {
                 onChange={e => convertMileage(e.target.value, 'max')}
                 value={maxMileage}
                 className={css.inputTo}
+                maxLength={5}
                 type="text"
                 pattern="[0-9 ,]+"
                 title="Only digits provided"

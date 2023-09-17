@@ -31,7 +31,7 @@ export const AdvertsList = ({ adverts, setPage, page }) => {
     <>
       <div className={css.container}>
         <ul className={css.list}>
-          {isLoading && <b>Loading contacts...</b>}
+          {isLoading && <b>Loading adverts...</b>}
           {error && <b>{error}</b>}
           {adverts.map(
             ({
