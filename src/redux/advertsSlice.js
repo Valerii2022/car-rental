@@ -15,7 +15,7 @@ const advertsSlice = createSlice({
         if (action.payload.length < 8) {
           state.loadMore = false;
         }
-        if (action.meta.arg === 1) {
+        if (action.meta.arg === 1 || action.meta.arg === undefined) {
           state.items = action.payload;
         } else {
           state.items.push(...action.payload);
