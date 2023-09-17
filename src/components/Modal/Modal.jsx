@@ -50,7 +50,7 @@ export const Modal = ({ currentId, modalIsOpen }) => {
   };
 
   const convertMileage = mileage => {
-    if (mileage > 1000) {
+    if (mileage >= 1000) {
       const res = mileage.toString().split('');
       res.splice(res.length - 3, 0, ',').join('');
       return res;

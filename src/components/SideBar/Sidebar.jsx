@@ -1,29 +1,33 @@
-// import { useDispatch } from 'react-redux';
 import css from './Sidebar.module.css';
 import React, { useState } from 'react';
-// import { addFilters } from 'redux/favouritesSlise';
+import { useDispatch } from 'react-redux';
 import Select from 'react-select';
+import { addFilters } from 'redux/favouritesSlise';
 
 export const Sidebar = () => {
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [minMileage, setMinMileage] = useState('');
   const [maxMileage, setMaxMileage] = useState('');
+  const [brand, setBrand] = useState('');
+  const [price, setPrice] = useState('');
   let filters = {};
 
   const handleSubmitForm = e => {
     e.preventDefault();
-    console.log(e);
-    //  filters.brand = e.target[0].value;
-    //  filters.price = Number(e.target[1].value);
+    filters.brand = brand;
+    filters.price = price;
     filters.min = minMileage;
     filters.max = maxMileage;
-    //  dispatch(addFilters(filters));
+    console.log(filters);
+    dispatch(addFilters(filters));
     setMaxMileage('');
     setMinMileage('');
+    setBrand('');
+    setPrice('');
   };
 
   const convertMileage = (mileage, value) => {
-    if (Number(mileage) > 1000) {
+    if (Number(mileage) >= 1000) {
       const res = mileage.toString().split('');
       res.splice(res.length - 3, 0, ',').join('');
       if (value === 'max') {
@@ -159,6 +163,9 @@ export const Sidebar = () => {
         <div>
           <p className={css.selectTitle}>Car brand</p>
           <Select
+            required
+            defaultValue={brand}
+            onChange={e => setBrand(e.label)}
             maxMenuHeight={272}
             className={css.selectBrandField}
             placeholder="Enter the text"
@@ -172,6 +179,9 @@ export const Sidebar = () => {
         <div>
           <p className={css.selectTitle}>Price / 1 hour</p>
           <Select
+            required
+            defaultValue={price}
+            onChange={e => setPrice(e.label)}
             maxMenuHeight={188}
             className={css.selectPriceField}
             placeholder="To $"
@@ -188,22 +198,24 @@ export const Sidebar = () => {
             <label className={css.inputLabel}>
               <p className={css.inputTitle}>From</p>
               <input
+                required
                 onChange={e => convertMileage(e.target.value, 'min')}
                 value={minMileage}
                 className={css.inputFrom}
                 type="text"
-                pattern="[0-9]+"
+                pattern="[0-9 ,]+"
                 title="Only digits provided"
               />
             </label>
             <label className={css.inputLabel}>
               <p className={css.inputTitle}>To</p>
               <input
+                required
                 onChange={e => convertMileage(e.target.value, 'max')}
                 value={maxMileage}
                 className={css.inputTo}
                 type="text"
-                pattern="[0-9]+"
+                pattern="[0-9 ,]+"
                 title="Only digits provided"
               />
             </label>
