@@ -12,12 +12,25 @@ export const Favourites = () => {
   const favouritesList = items.filter(item => favourites.includes(item.id));
 
   useEffect(() => {
-    dispatch(fetchAdverts());
+    dispatch(fetchAdverts({ pageNumbert: 1, brand: '' }));
   }, [dispatch]);
   return (
     <>
       <Sidebar />
-      <AdvertsList adverts={favouritesList} />
+      {favouritesList.length === 0 ? (
+        <p
+          style={{
+            padding: '50px',
+            marginLeft: 'auto',
+            textAlign: 'center',
+            fontWeight: '700',
+          }}
+        >
+          Sorry, you have no favorite adverts...
+        </p>
+      ) : (
+        <AdvertsList adverts={favouritesList} />
+      )}
     </>
   );
 };

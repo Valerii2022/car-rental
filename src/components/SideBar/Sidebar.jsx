@@ -2,7 +2,7 @@ import css from './Sidebar.module.css';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Select from 'react-select';
-import { addFilters } from 'redux/favouritesSlise';
+import { fetchAdverts } from 'redux/operations';
 
 export const Sidebar = () => {
   const dispatch = useDispatch();
@@ -14,14 +14,16 @@ export const Sidebar = () => {
 
   const handleSubmitForm = e => {
     e.preventDefault();
-    filters.brand = brand ? brand : '';
     filters.price = price ? price : 1000;
     filters.min = minMileage ? minMileage : 0;
     filters.max = maxMileage ? maxMileage : 10000;
-    dispatch(addFilters(filters));
+    if (brand === 'All cars') {
+      dispatch(fetchAdverts({ pageNumber: 1, brand: '' }));
+    } else {
+      dispatch(fetchAdverts({ pageNumber: 1, brand: brand }));
+    }
     setMaxMileage('');
     setMinMileage('');
-    setBrand('');
     setPrice('');
   };
 
@@ -36,6 +38,7 @@ export const Sidebar = () => {
   };
 
   const brandOptions = [
+    { value: 'all', label: 'All cars' },
     { value: 'buick', label: 'Buick' },
     { value: 'volvo', label: 'Volvo' },
     { value: 'hummer', label: 'HUMMER' },

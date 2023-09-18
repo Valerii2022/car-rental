@@ -4,16 +4,13 @@ import storage from 'redux-persist/lib/storage';
 
 const favouritesSlice = createSlice({
   name: 'filter',
-  initialState: { favourites: [], filters: null },
+  initialState: { favourites: [] },
   reducers: {
     addFavourites(state, { payload }) {
       state.favourites.push(payload);
     },
     deleteFavourites(state, { payload }) {
       state.favourites = state.favourites.filter(id => id !== payload);
-    },
-    addFilters(state, { payload }) {
-      state.filters = payload;
     },
   },
 });
@@ -28,5 +25,4 @@ export const favouritesReducer = persistReducer(
   favouritesSlice.reducer
 );
 
-export const { addFavourites, deleteFavourites, addFilters } =
-  favouritesSlice.actions;
+export const { addFavourites, deleteFavourites } = favouritesSlice.actions;

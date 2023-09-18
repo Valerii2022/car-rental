@@ -12,7 +12,7 @@ export const Catalog = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAdverts(pageNumber));
+    dispatch(fetchAdverts({ pageNumber }));
   }, [dispatch, pageNumber]);
   return (
     <>
