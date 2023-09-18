@@ -25,23 +25,13 @@ export const Sidebar = () => {
     setPrice('');
   };
 
-  const convertMileage = (mileage, value) => {
+  const convertMileage = (mileage, callback) => {
     if (Number(mileage) >= 1000) {
       const res = mileage.toString().split('');
       res.splice(res.length - 3, 0, ',').join('');
-      if (value === 'max') {
-        setMaxMileage(res.join(''));
-      }
-      if (value === 'min') {
-        setMinMileage(res.join(''));
-      }
+      callback(res.join(''));
     } else {
-      if (value === 'max') {
-        setMaxMileage(mileage);
-      }
-      if (value === 'min') {
-        setMinMileage(mileage);
-      }
+      callback(mileage);
     }
   };
 
@@ -234,7 +224,6 @@ export const Sidebar = () => {
         <div>
           <p className={css.selectTitle}>Car brand</p>
           <Select
-            required
             defaultValue={brand}
             onChange={e => setBrand(e.label)}
             maxMenuHeight={272}
@@ -267,7 +256,7 @@ export const Sidebar = () => {
             <label className={css.inputLabel}>
               <p className={css.inputTitle}>From</p>
               <input
-                onChange={e => convertMileage(e.target.value, 'min')}
+                onChange={e => convertMileage(e.target.value, setMinMileage)}
                 value={minMileage}
                 className={css.inputFrom}
                 maxLength={5}
@@ -279,7 +268,7 @@ export const Sidebar = () => {
             <label className={css.inputLabel}>
               <p className={css.inputTitle}>To</p>
               <input
-                onChange={e => convertMileage(e.target.value, 'max')}
+                onChange={e => convertMileage(e.target.value, setMaxMileage)}
                 value={maxMileage}
                 className={css.inputTo}
                 maxLength={5}
