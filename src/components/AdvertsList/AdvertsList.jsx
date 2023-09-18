@@ -66,7 +66,13 @@ export const AdvertsList = ({ adverts, setPage, page }) => {
                         height="18"
                       />
                     )}
-                    <img className={css.image} src={img} alt="" height="268" />
+                    <img
+                      className={css.image}
+                      src={img}
+                      alt={make}
+                      width="401"
+                      height="268"
+                    />
                   </div>
                   <div className={css.titleWrapper}>
                     <h2 className={css.title}>
