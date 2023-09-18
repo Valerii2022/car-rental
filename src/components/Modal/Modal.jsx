@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { getAdverts } from 'redux/selectors';
 import { nanoid } from 'nanoid';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -146,4 +147,9 @@ export const Modal = ({ currentId, modalIsOpen }) => {
     </div>,
     modalRoot
   );
+};
+
+Modal.propTypes = {
+  currentId: PropTypes.number,
+  modalIsOpen: PropTypes.func,
 };

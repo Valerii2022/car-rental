@@ -6,6 +6,7 @@ import { ReactComponent as HeartIcon } from '../../image/heart.svg';
 import { ReactComponent as ActiveIcon } from '../../image/active.svg';
 import { Modal } from 'components/Modal';
 import { addFavourites, deleteFavourites } from 'redux/favouritesSlise';
+import PropTypes from 'prop-types';
 
 export const AdvertsList = ({ adverts, setPage, page }) => {
   const { error, isLoading, loadMore } = useSelector(getAdverts);
@@ -118,4 +119,10 @@ export const AdvertsList = ({ adverts, setPage, page }) => {
       {openModal && <Modal currentId={id} modalIsOpen={setOpenModal} />}
     </>
   );
+};
+
+AdvertsList.propTypes = {
+  adverts: PropTypes.array,
+  setPage: PropTypes.func,
+  page: PropTypes.string,
 };
