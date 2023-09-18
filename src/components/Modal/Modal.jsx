@@ -150,6 +150,6 @@ export const Modal = ({ currentId, modalIsOpen }) => {
 };
 
 Modal.propTypes = {
-  currentId: PropTypes.number,
+  currentId: PropTypes.string,
   modalIsOpen: PropTypes.func,
 };
