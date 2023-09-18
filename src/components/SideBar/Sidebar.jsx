@@ -14,7 +14,7 @@ export const Sidebar = () => {
 
   const handleSubmitForm = e => {
     e.preventDefault();
-    filters.brand = brand;
+    filters.brand = brand ? brand : '';
     filters.price = price ? price : 1000;
     filters.min = minMileage ? minMileage : 0;
     filters.max = maxMileage ? maxMileage : 10000;
