@@ -23,7 +23,7 @@ const advertsSlice = createSlice({
         } else {
           state.items.push(...action.payload);
         }
-        if (action.payload.length < 8) {
+        if (action.payload.length < 8 || action.payload.length > 8) {
           state.loadMore = false;
         }
       })

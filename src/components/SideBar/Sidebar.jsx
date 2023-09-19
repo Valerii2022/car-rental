@@ -2,6 +2,7 @@ import css from './Sidebar.module.css';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Select from 'react-select';
+import { addFilter } from 'redux/favouritesSlise';
 import { fetchAdverts } from 'redux/operations';
 
 export const Sidebar = () => {
@@ -14,17 +15,24 @@ export const Sidebar = () => {
 
   const handleSubmitForm = e => {
     e.preventDefault();
-    filters.price = price ? price : 1000;
-    filters.min = minMileage ? minMileage : 0;
-    filters.max = maxMileage ? maxMileage : 10000;
-    if (brand === 'All cars') {
+    filters.price = price ? price : '500';
+    filters.min = minMileage ? minMileage : '0';
+    filters.max = maxMileage ? maxMileage : ' 10000';
+    if (brand === 'All cars' || brand === '') {
       dispatch(fetchAdverts({ pageNumber: 1, brand: '' }));
     } else {
       dispatch(fetchAdverts({ pageNumber: 1, brand: brand }));
     }
+    dispatch(
+      addFilter({
+        rentalPrice: filters.price,
+        min: filters.min,
+        max: filters.max,
+      })
+    );
     setMaxMileage('');
     setMinMileage('');
-    setPrice('');
+    // setPrice('');
   };
 
   const convertMileage = (mileage, callback) => {
@@ -66,6 +74,7 @@ export const Sidebar = () => {
   ];
 
   const priceOptions = [
+    { value: 'all', label: '$' },
     { value: '30', label: '30' },
     { value: '40', label: '40' },
     { value: '50', label: '50' },

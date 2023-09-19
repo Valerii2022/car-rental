@@ -22,6 +22,7 @@ export const Favourites = () => {
           style={{
             padding: '50px',
             marginLeft: 'auto',
+            marginRight: 'auto',
             textAlign: 'center',
             fontWeight: '700',
           }}
