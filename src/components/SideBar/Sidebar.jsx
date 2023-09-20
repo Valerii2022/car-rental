@@ -32,7 +32,6 @@ export const Sidebar = () => {
     );
     setMaxMileage('');
     setMinMileage('');
-    // setPrice('');
   };
 
   const convertMileage = (mileage, callback) => {
