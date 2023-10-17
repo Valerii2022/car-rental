@@ -1,44 +1,44 @@
-# Застосунок для оренди автомобілів в Україні.
+# Application for car rental in Ukraine.
 
-## Застосунок складається з 3-х сторінок:
+## The application consists of 3 pages:
 
-`«Домашня сторінка»` з загальним описом послуг, що надає компанія.
+`«Homepage»` with a general description of the services provided by the company.
 
 ![Homepage](./assets/homepage.png)
 
-`«Каталог»` автівок різної комплектації, які користувач може фільтрувати за
-маркою, ціною за годину оренди авто та кількістю кілометрів, яку подолав
-автомобіль під час його експлуатації (пробіг).
+`«Catalog»` of cars of various configurations, which the user can filter by
+brand, the price per hour of car rental and the number of kilometers covered by
+the car during its operation (mileage).
 
 ![Catalog](./assets/catalog.png)
 
-Сторінка з оголошеннями, які були додані користувачем в `«Улюблені»`.
+A page with ads that have been added to `«Favorites»` by the user.
 
 ![Favourites](./assets/favourites.png)
 
-У разі кліку по кнопці у вигляді `«Серця»` на картці оголошення додається до
-списку `«Улюблених»`, а колір кнопки змінюється.
+If you click on the button in the form of `«Heart»` on the card, the ad is added
+to the list of `«Favorites»`, and the color of the button changes.
 
 ![Heart](./assets/heart.png)
 
-При оновленні сторінки фіксується кінцевий результат дій користувача. Тобто,
-якщо додати оголошення в `«Улюблені»` та оновити сторінку - то кнопка все одно
-залишається в стані `«Улюбленого оголошення»` із відповідним кольором. У разі
-повторного кліку по кнопці у вигляді `«Серця»` оголошення видаляється зі списку
-`«Улюблених»`, а колір кнопки змінюється до початкового стану.
+When the page is updated, the final result of the user's actions is recorded.
+That is, if you add an ad to `«Favorites»` and refresh the page, the button
+still remains in the `«Favorites ad»` state with the appropriate color. If you
+click the `«Heart»` button again, the ad is removed from the list of
+`«Favorites»`, and the color of the button changes to its original state.
 
-### Реалізована картка оголошення про здачу авто в оренду з інформацією про автомобіль.
+### A car rental announcement card with information about the car has been implemented.
 
-При натисканні на кнопку `«Learn more»` відкривається модальне вікно з детальною
-інформацією про автомобіль та умовами оренди.
+Clicking on the `«Learn more»` button opens a modal window with detailed
+information about the car and rental conditions.
 
 ![Modal](./assets/modal.png)
 
-Модальне вікно закривається по кліку на кнопку у вигляді `«хрестика»`, по кліку
-на `«backdrop»` або натисканню на клавішу `«ESC»`. Кнопку `«Rental car»` надає
-можливість користувачу зʼєднатись з компанією за номером телефону
+The modal window is closed by clicking on the button in the form of a `«cross»`,
+by clicking on the `«backdrop»` or pressing the `«ESC»` key. The `«Rental car»`
+button allows the user to connect with the company by phone number
 `«+380730000000»`.
 
-### Реалізована можливість фільтрації оголошень за `«брендом»` автомобіля, `«ціною»` за годину оренди та за `«пробігом»` авто.
+### The ability to filter ads by car `«brand»`, `«price»` per hour of rental and car `«mileage»` has been implemented.
 
 ![Filter](./assets/filter.png)
